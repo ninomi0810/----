@@ -10,11 +10,6 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('../views/AboutView.vue')
-    },
-    {
       path: '/Front',
       name: 'Front',
       component: () => import('../views/Front.vue'),
@@ -40,24 +35,29 @@ const router = createRouter({
       component: () => import('../views/Back.vue')
     },
     {
-      path: '/BackManage1',
-      name: 'BackManage1',
-      component: () => import('../views/BackManage1.vue')
+      path: '/Questionnaire',
+      name: 'Questionnaire',
+      component: () => import('../views/Questionnaire.vue')
     },
     {
-      path: '/BackManage2',
-      name: 'BackManage2',
-      component: () => import('../views/BackManage2.vue')
+      path: '/QandA',
+      name: 'QandA',
+      component: () => import('../views/QandA.vue')
     },
     {
-      path: '/BackManage3',
-      name: 'BackManage3',
-      component: () => import('../views/BackManage3.vue')
+      path: '/Feedback',
+      name: 'Feedback',
+      component: () => import('../views/Feedback.vue')
     },
     {
-      path: '/BackManage4',
-      name: 'BackManage4',
-      component: () => import('../views/BackManage4.vue')
+      path: '/FeedbackDetail',
+      name: 'FeedbackDetail',
+      component: () => import('../views/FeedbackDetail.vue')
+    },
+    {
+      path: '/BackChack',
+      name: 'BackChack',
+      component: () => import('../views/BackChack.vue')
     },
     {
       path: '/BackStatistics',

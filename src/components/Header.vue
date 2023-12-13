@@ -14,17 +14,16 @@ export default{
 <template>
 <div class="headerShow">
     <RouterLink to="/" class="link">Home</RouterLink>
-    <RouterLink to="/about" class="link">About</RouterLink>
-    <RouterLink to="/Front" class="link">Front</RouterLink>
-    <RouterLink to="/FrontInside" class="link">FrontInside</RouterLink>
-    <RouterLink to="/FrontChack" class="link">FrontChack</RouterLink>
-    <RouterLink to="/FrontStatistics" class="link">FrontStatistics</RouterLink>
+    <RouterLink to="/Front" class="link">前台列表頁</RouterLink>
+    <RouterLink to="/FrontInside" class="link">問卷填寫頁</RouterLink>
+    <RouterLink to="/FrontChack" class="link">填寫確認頁</RouterLink>
+    <RouterLink to="/FrontStatistics" class="link">前台統計</RouterLink>
     <RouterLink to="/Back" class="link">Back</RouterLink>
-    <RouterLink to="/BackManage1" class="link">BackManage1</RouterLink>
-    <RouterLink to="/BackManage2" class="link">BackManage2</RouterLink>
-    <RouterLink to="/BackManage3" class="link">BackManage3</RouterLink>
-    <RouterLink to="/BackManage4" class="link">BackManage4</RouterLink>
-    <RouterLink to="/BackStatistics" class="link">BackStatistics</RouterLink>
+    <RouterLink to="/Questionnaire" class="link">問卷</RouterLink>
+    <RouterLink to="/QandA" class="link">題目</RouterLink>
+    <RouterLink to="/Feedback" class="link">問卷回饋</RouterLink>
+    <RouterLink to="/BackChack" class="link">問卷確認</RouterLink>
+    <RouterLink to="/BackStatistics" class="link">統計</RouterLink>
 </div>
 </template>
 

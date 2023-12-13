@@ -1,73 +1,81 @@
 <script>
 export default {
-    data(){
+    data() {
 
     },
 }
 </script>
 <template>
-<div class="header">
-    <div class="title">
-        <div class="name">
-            <span>問卷名稱：</span>
-            <input type="text" name="" id="">
-        </div>
-        <div class="time">
-            <div class="from">
-                <span>統計時間：</span>
-                <input type="date" name="" id="">
+    <RouterLink :to="`/Front`" class="rounterItem">
+        <i class="fa-solid fa-heart"></i>
+    </RouterLink>
+
+    <div class="header">
+        <div class="title">
+            <div class="name">
+                <span>問卷名稱：</span>
+                <input type="text" name="" id="">
             </div>
-            <div class="to">
-                <span>到</span>
-                <input type="date" name="" id="">
+            <div class="time">
+                <div class="from">
+                    <span>統計時間：</span>
+                    <input type="date" name="" id="">
+                </div>
+                <div class="to">
+                    <span>到</span>
+                    <input type="date" name="" id="">
+                </div>
+                <button type="submit">搜尋</button>
             </div>
-            <button type="submit">搜尋</button>
         </div>
     </div>
-</div>
-<div class="btn">
-    <i class="fa-solid fa-trash-can"></i>
-    <i class="fa-solid fa-plus"></i>
-</div>
-<div class="list">
-    <table>
-        <tr>
-            <th class="check"></th>
-            <th class="number">編號</th>
-            <th class="name">名稱</th>
-            <th class="now">狀態</th>
-            <th class="start">開始時間</th>
-            <th class="end">結束時間</th>
-            <th class="result">結果</th>
-        </tr>
-        <tr>
-            <td><input type="checkbox" name="" id=""></td>
-            <td></td>
-            <td>我我我我我午我我我五</td>
-            <td>我我我我</td>
-            <td></td>
-            <td></td>
-            <td><RouterLink :to="`/FrontStatistics`" class="rounterItem">前往</RouterLink></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
-</div>
-<div class="footer">
+    <div class="btn">
+        <i class="fa-solid fa-trash-can"></i>
+        <i class="fa-solid fa-plus"></i>
+    </div>
+    <div class="list">
+        <table>
+            <tr>
+                <th class="check"></th>
+                <th class="number">編號</th>
+                <th class="name">名稱</th>
+                <th class="now">狀態</th>
+                <th class="start">開始時間</th>
+                <th class="end">結束時間</th>
+                <th class="result">結果</th>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td></td>
+                <td>
+                    <RouterLink :to="`/QandA`" class="rounterItem">問卷名稱</RouterLink>
+                </td>
+                <td>我我我我</td>
+                <td></td>
+                <td></td>
+                <td>
+                    <RouterLink :to="`/BackStatistics`" class="rounterItem">前往</RouterLink>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <div class="footer">
         <nav aria-label="Page navigation example">
             <ul class="pagination">
                 <li class="page-item">
@@ -89,51 +97,59 @@ export default {
 </template>
 
 <style scoped lang="scss">
-.header{
+.header {
     display: flex;
     justify-content: center;
     padding-top: 50px;
 
-    .title{
+    .title {
         width: 800px;
         height: 100px;
         border: 1px solid black;
         position: relative;
-        .name{
+
+        .name {
             padding: 15px;
             font-size: large;
-            span{
+
+            span {
                 position: absolute;
                 left: 50px;
             }
-            input{
+
+            input {
                 width: 580px;
                 height: 25px;
                 position: absolute;
                 left: 160px;
             }
         }
-        .time{
+
+        .time {
             padding: 25px;
             font-size: large;
-            .from{
-                span{
+
+            .from {
+                span {
                     position: absolute;
                     left: 50px;
                 }
-                input{
+
+                input {
                     width: 200px;
                     height: 25px;
                     position: absolute;
                     left: 160px;
                 }
             }
-            .to{
-                span{
+
+            .to {
+                span {
                     position: absolute;
                     left: 400px;
                 }
-                input{
+
+                input {
                     width: 200px;
                     height: 25px;
                     position: absolute;
@@ -141,7 +157,8 @@ export default {
                 }
             }
         }
-        button{
+
+        button {
             position: absolute;
             width: 50px;
             height: 30px;
@@ -149,64 +166,78 @@ export default {
         }
     }
 }
-.btn{
+
+.btn {
     padding: 20px;
     font-size: 30px;
     position: relative;
-    .fa-trash-can{
+
+    .fa-trash-can {
         position: absolute;
         left: 380px;
     }
-    .fa-plus{
+
+    .fa-plus {
         position: absolute;
         left: 420px;
     }
 }
-.list{
+
+.list {
     display: flex;
     justify-content: center;
     padding: 25px;
-    th{
+
+    th {
         background-color: gray;
         color: white;
         padding: 10px;
     }
-    tr{
-        .check{
+
+    tr {
+        .check {
             width: 20px;
         }
-        .number{
+
+        .number {
             width: 50px;
         }
-        .name{
+
+        .name {
             width: 220px;
         }
-        .now{
+
+        .now {
             width: 70px;
         }
-        .start{
+
+        .start {
             width: 120px;
         }
-        .end{
+
+        .end {
             width: 120px;
         }
-        .result{
+
+        .result {
             width: 50px;
         }
 
     }
-    td{
-        background-color:rgb(227,227,227);
+
+    td {
+        background-color: rgb(227, 227, 227);
     }
 }
-.footer{
-    ul{
+
+.footer {
+    ul {
         display: flex;
         justify-content: center;
     }
-    li{
-        list-style:none;
+
+    li {
+        list-style: none;
         margin-left: 5px;
     }
-}
-</style>
+}</style>

@@ -1,16 +1,30 @@
 <script>
 export default {
-    data(){
+    data() {
+        return {
+            question: "",
 
+        }
     },
+    methods: {
+        add() {
+            const add = document.getElementById("add")
+        }
+    }
 }
 </script>
 <template>
+    <div class="header">
+        <RouterLink to="/Questionnaire" class="link">問卷</RouterLink>
+        <RouterLink to="/QandA" class="link">題目</RouterLink>
+        <RouterLink to="/Feedback" class="link">問卷回饋</RouterLink>
+        <RouterLink to="/BackStatistics" class="link">統計</RouterLink>
+    </div>
     <div class="content">
         <div class="up">
             <div class="question">
                 <p>問題：</p>
-                <input type="text" class="text" id="">
+                <input type="text" class="text" id="" v-model="this.question">
                 <select name="" id="">
                     <option value="">單選題</option>
                     <option value="">多選題</option>
@@ -22,8 +36,8 @@ export default {
             <div class="answer">
                 <p>選項：</p>
                 <span>(多個答案請以; 分隔)</span>
-                <input type="text" name="" id="">
-                <button type="submit">加入</button>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <button type="submit" id="add" @click="add()">加入</button>
             </div>
 
         </div>
@@ -41,41 +55,60 @@ export default {
                     </tr>
                 </table>
             </div>
-
         </div>
 
     </div>
 
     <div class="footer">
-        <button type="submit" class="before"><RouterLink :to="`/Back`" class="rounterItem">上一步</RouterLink></button>
-        <!-- <button type="submit"><RouterLink :to="`/FrontInside`" class="rounterItem">送出</RouterLink></button> -->
+        <button type="submit" class="before">
+            <RouterLink :to="`/Questionnaire`" class="rounterItem">上一步</RouterLink>
+        </button>
+        <button type="submit" class="before push">
+            <RouterLink :to="`/FrontInside`" class="rounterItem">送出</RouterLink>
+        </button>
     </div>
-
 </template>
 
 <style scoped lang="scss">
-.content{
+.header {
+    width: 90vw;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+
+    .link {
+        text-decoration: none;
+        margin-left: 10px;
+    }
+}
+
+.content {
     position: relative;
-    .up{
+
+    .up {
         height: 170px;
         margin: 30px;
         display: flex;
         justify-content: center;
-        .question{
+
+        .question {
             position: absolute;
             font-size: large;
             width: 800px;
-            p{
+
+            p {
                 position: absolute;
                 left: 50px;
             }
-            .text{
+
+            .text {
                 position: absolute;
                 left: 150px;
                 height: 25px;
                 width: 300px;
             }
-            select{
+
+            select {
                 position: absolute;
                 left: 500px;
                 top: 3px;
@@ -83,34 +116,40 @@ export default {
                 width: 100px;
                 font-size: large;
             }
-            .checkbox{
+
+            .checkbox {
                 position: absolute;
                 left: 650px;
                 top: 5px;
                 height: 20px;
                 width: 20px;
             }
-            span{
+
+            span {
                 position: absolute;
                 left: 700px;
                 top: 5px;
-                
+
             }
         }
-        .answer{
+
+        .answer {
             position: absolute;
             top: 40px;
             font-size: large;
             width: 800px;
-            p{
+
+            p {
                 position: absolute;
                 left: 50px;
             }
-            span{
+
+            span {
                 position: absolute;
                 left: 150px;
             }
-            input{
+
+            textarea {
                 display: flex;
                 flex-wrap: wrap;
                 position: absolute;
@@ -119,7 +158,8 @@ export default {
                 height: 70px;
                 width: 450px;
             }
-            button{
+
+            button {
                 position: absolute;
                 left: 650px;
                 top: 60px;
@@ -130,61 +170,85 @@ export default {
         }
 
     }
-    .down{
+
+    .down {
         display: flex;
         justify-content: center;
         height: 300px;
-        i{
+
+        i {
             position: absolute;
             font-size: 30px;
             top: 180px;
             left: 430px;
         }
 
-        .list{
+        .list {
             padding: 25px;
             position: absolute;
             top: 200px;
-            th{
+
+            th {
                 background-color: gray;
                 color: white;
                 padding: 10px;
             }
-            tr{
-                .check{
+
+            tr {
+                .check {
                     width: 30px;
                 }
-                .number{
+
+                .number {
                     width: 60px;
                 }
-                .name{
+
+                .name {
                     width: 250px;
                 }
-                .type{
+
+                .type {
                     width: 100px;
                 }
-                .required{
+
+                .required {
                     width: 50px;
                 }
-                .edit{
+
+                .edit {
                     width: 80px;
                 }
-    
+
             }
-            td{
-                background-color:rgb(227,227,227);
+
+            td {
+                background-color: rgb(227, 227, 227);
             }
         }
     }
 }
-.footer{
+
+.footer {
     position: relative;
-    .before{
+
+    .before {
         position: absolute;
         width: 70px;
         height: 30px;
-        left: 900px;
+        left: 790px;
+        bottom: 100px;
+
+        .rounterItem {
+            text-decoration: none;
+            color: black;
+        }
     }
 
+    .push {
+        position: absolute;
+        width: 70px;
+        height: 30px;
+        left: 890px;
+    }
 }
 </style>
